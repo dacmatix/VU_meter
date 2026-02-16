@@ -1,4 +1,33 @@
-# OLED display VU meter — AVR/Arduino project
+# OLED display VU meter — Raspberry Pico port
+
+This is a port of the [VU meter](https://github.com/adamples/VU_meter.git) project to the Raspberry Pico MCU.
+
+### Building The Project
+
+Compile using:
+
+```s
+mkdir build-rp2350
+cmake -DPICO_BOARD=pico2 ../src
+make
+```
+
+### Testing
+
+Connect I2C OLED SSD1306 SDA to pin 0 and SCL to pin 1, GND and 3.3V. Random values will show in the OLED display and the RP LED at pin 25 will blink.
+
+Check main.c for usage.
+
+### Pending
+
+- Calibration. Check if needed for digital usage without original project's capture/ballistic PCB.
+- Peak timeout.
+
+
+
+| Original README.md follows:
+
+## OLED display VU meter — AVR/Arduino project
 
 This project is to create digital version of a nice gadget that adds a little magic 
 to any audio equipment: a [VU meter](https://en.wikipedia.org/wiki/VU_meter). Main design
@@ -17,7 +46,7 @@ Here's a video showing test of VU meter prototype:
 
 [![Background and needle animation test video](https://img.youtube.com/vi/tU8fmWirxTw/maxresdefault.jpg)](https://www.youtube.com/watch?v=tU8fmWirxTw)
 
-## Building The Project
+### Building The Project
 
 To build hex file you'll need:
   - avr-gcc,
@@ -35,7 +64,7 @@ This will create `build/main.hex` that you can use to flash your device.
 
 __Note: This is Work In Progress design. To make it work for you you'll most probably need to modify it in one way or another.__
 
-## Hardware Design
+### Hardware Design
 
 If you would like to make VU meter yourself here are some useful files for you:
   - [hardware/vu_meter.sch](hardware/vu_meter.sch) — schematic (in Eagle 8 format)

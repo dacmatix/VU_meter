@@ -1,7 +1,6 @@
 #include "progmem_image_sprite.h"
 #include <stdlib.h>
 #include <string.h>
-#include <avr/pgmspace.h>
 #include "utils.h"
 #include "assert.h"
 
@@ -26,7 +25,7 @@ progmem_image_sprite_render(sprite_t *sprite, uint8_t column_a, uint8_t page, ui
   oled_segment_t *target = segments + target_column_a - column_a;
 
   for (uint8_t i = target_column_a; i <= target_column_b; ++i) {
-    *target = pgm_read_byte(source);
+    *target = *source;
     ++target;
     ++source;
   }
@@ -42,8 +41,8 @@ progmem_image_sprite_init(progmem_image_sprite_t *image, const uint8_t *data, ui
   image->sprite.changed = true;
   image->column = column;
   image->page = page;
-  image->width = pgm_read_byte(data);
-  image->height = pgm_read_byte(data + 1) / OLED_PAGE_HEIGHT;
+  image->width = data[0];
+  image->height = data[1] / OLED_PAGE_HEIGHT;
   image->data = data;
 }
 

@@ -16,10 +16,10 @@
 
 void oled_reset()
 {
-  delay_ms(10);
-  OLED_RESET_DDR |= _BV(OLED_RESET_P);
-  OLED_RESET_PORT &= ~_BV(OLED_RESET_P);
-  delay_ms(10);
-  OLED_RESET_PORT |= _BV(OLED_RESET_P);
-  delay_ms(10);
+  // delay_ms(10);
+  // OLED_RESET_DDR |= _BV(OLED_RESET_P);
+  // OLED_RESET_PORT &= ~_BV(OLED_RESET_P);
+  // delay_ms(10);
+  // OLED_RESET_PORT |= _BV(OLED_RESET_P);
+  // delay_ms(10);
 }

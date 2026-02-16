@@ -1,8 +1,7 @@
 #include "needle_coordinates.h"
 #include <stdint.h>
-#include <avr/pgmspace.h>
 
-const needle_coordinates_t NEEDLE_COORDINATES[NEEDLE_RESOLUTION] PROGMEM = {
+const needle_coordinates_t NEEDLE_COORDINATES[NEEDLE_RESOLUTION] = {
   {   0,  23 },
   {   1,  23 },
   {   2,  22 },

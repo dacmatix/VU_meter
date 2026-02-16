@@ -1,9 +1,9 @@
 #include "display.h"
 #include <stdlib.h>
 #include <string.h>
-#include <avr/pgmspace.h>
+// #include <avr/pgmspace.h>
 #include "utils.h"
-#include "assert.h"
+// #include "assert.h"
 #include "bitmap.h"
 
 
@@ -19,7 +19,7 @@ display_init(display_t *display, uint8_t address)
 void
 display_add_sprite(display_t *display, sprite_t *sprite)
 {
-  assert(display->sprites_n < DISPLAY_MAX_SPRITES);
+  // assert(display->sprites_n < DISPLAY_MAX_SPRITES);
 
   display->sprites[display->sprites_n] = sprite;
   ++display->sprites_n;

@@ -1,14 +1,12 @@
 #include "oled.h"
 #include <stdlib.h>
-#include <avr/pgmspace.h>
 #include "utils.h"
-#include "i2c.h"
+#include "i2c_driver.h"
 
 #define OLED_MAX_COLUMN_ADDRESS (OLED_COLUMNS_N - 1)
 #define OLED_MAX_PAGE_ADDRESS (OLED_PAGES_N - 1)
 
-
-static const uint8_t OLED_INIT_SEQUENCE[] PROGMEM = {
+static const uint8_t OLED_INIT_SEQUENCE[] = {
     OLED_CTRL_COMMAND | OLED_CTRL_N_BYTES,
     OLED_CMD_SET_DISPLAY_ON(false),
     OLED_CMD_SET_MULTIPLEX_RATIO, 0x3F,

@@ -140,8 +140,8 @@ class CBitmap(object):
   def write(self, path):
     with open(path, 'w') as f:
       f.write("#include <stdint.h>\n")
-      f.write("#include <avr/pgmspace.h>\n\n")
-      f.write("const uint8_t %s[%d] PROGMEM = {\n" % (self.name, len(self.data) + 2))
+      # f.write("#include <avr/pgmspace.h>\n\n")
+      f.write("const uint8_t %s[%d] = {\n" % (self.name, len(self.data) + 2))
       f.write("  0x%02x, /* = width */\n  0x%02x, /* = height */\n" % (self.width, self.height))
 
       dataiter = iter(self.data)

@@ -1,7 +1,7 @@
 #include "needle_sprite.h"
 #include <stdlib.h>
 #include <string.h>
-#include <avr/pgmspace.h>
+
 #include "utils.h"
 #include "assert.h"
 #include "needle_coordinates.h"
@@ -94,8 +94,8 @@ void
 needle_sprite_draw(needle_sprite_t *needle, uint8_t angle)
 {
   uint8_t index = (uint16_t) angle * NEEDLE_RESOLUTION / 256;
-  uint8_t ax = pgm_read_byte(&(NEEDLE_COORDINATES[index].x));
-  uint8_t ay = pgm_read_byte(&(NEEDLE_COORDINATES[index].y));
+  uint8_t ax = NEEDLE_COORDINATES[index].x;
+  uint8_t ay = NEEDLE_COORDINATES[index].y;
 
   draw_line_23_octants(needle->column, ax, ay, NEEDLE_AXIS_X, NEEDLE_AXIS_Y);
 
