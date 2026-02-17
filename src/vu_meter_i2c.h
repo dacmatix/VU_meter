@@ -9,10 +9,10 @@
 // #define OLED_DRAW_BUFFER_SIZE (8)
 
 // Images
-extern uint8_t IMG_SPLASH[];
-extern uint8_t IMG_BACKGROUND[];
-extern uint8_t IMG_PEAK_INDICATOR[];
-extern uint8_t IMG_WATERMARK[];
+extern const uint8_t IMG_SPLASH[];
+extern const uint8_t IMG_BACKGROUND[];
+extern const uint8_t IMG_PEAK_INDICATOR[];
+extern const uint8_t IMG_WATERMARK[];
 
 #include "display.h"
 #include "progmem_image_sprite.h"

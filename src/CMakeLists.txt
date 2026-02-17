@@ -2,7 +2,7 @@ project(vu_meter)
 
 
 add_executable(vu_meter
-    vu_meter.c
+    vu_meter_i2c.c
     bitmap.c
     display.c
     font.c
