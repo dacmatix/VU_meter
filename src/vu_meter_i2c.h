@@ -4,10 +4,6 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-//#include "vu_config.h"
-// #define SPLASH_SCREEN_TIME_MS (3000)
-// #define OLED_DRAW_BUFFER_SIZE (8)
-
 // Images
 extern const uint8_t IMG_SPLASH[];
 extern const uint8_t IMG_BACKGROUND[];
@@ -17,14 +13,6 @@ extern const uint8_t IMG_WATERMARK[];
 #include "display.h"
 #include "progmem_image_sprite.h"
 #include "needle_sprite.h"
-
-// #define DISPLAY_A_ADDRESS (0x3c)
-// #define DISPLAY_LEFT_ADDRESS (DISPLAY_A_ADDRESS)
-// #define DISPLAY_LEFT_FLIPPED (0)
-// #define DISPLAY_LEFT_BACKGROUND IMG_BACKGROUND
-// #define DISPLAY_LEFT_PEAK_INDICATOR IMG_PEAK_INDICATOR
-// #define DISPLAY_LEFT_SPLASH IMG_SPLASH
-// #define DISPLAY_LEFT_WATERMARK IMG_WATERMARK
 
 typedef struct vu_meter_i2c_t_ {
   display_t display;
